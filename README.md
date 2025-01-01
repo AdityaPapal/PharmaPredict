@@ -1,7 +1,7 @@
-# **Drug-Typing-Using-Patient-Data**
+# **PharmaSense: Enhancing Drug Recommendations with Machine Learning**
 
 ## **Project Overview**
-The **Drug-Typing-Using-Patient-Data** is a machine learning-based web application designed to help healthcare providers make precise drug recommendations based on patient data. By leveraging health metrics like age, blood pressure, and cholesterol, this system classifies patients into drug categories, improving prescription accuracy and reducing adverse effects.
+The **PharmaSense** is a machine learning-based web application designed to help healthcare providers make precise drug recommendations based on patient data. By leveraging health metrics like age, blood pressure, and cholesterol, this system classifies patients into drug categories, improving prescription accuracy and reducing adverse effects.
 
 ---
 
@@ -42,7 +42,7 @@ The **Drug-Typing-Using-Patient-Data** is a machine learning-based web applicati
 ### Machine Learning in Healthcare
 Machine learning models can analyze large datasets to make predictions that enhance treatment accuracy. In this project, machine learning is used to classify patients into drug categories based on health data.
 
-### Drug Typing
+### Drug Classification
 Different drugs work better for different patients based on their health metrics. This system uses supervised learning algorithms to ensure personalized treatment for patients.
 
 ---

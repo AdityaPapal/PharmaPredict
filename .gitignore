@@ -1,2 +1,4 @@
 env
 PharmaSense.egg-info
+python==3.8
+logs

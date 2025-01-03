@@ -4,6 +4,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src'
 from src.logging.logger import logging
 from src.exception.exception import CustomException
 
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
@@ -47,3 +48,4 @@ class DataIngestion:
 if __name__=="__main__":
     obj = DataIngestion()
     obj.initiate_data_ingestion()
+    

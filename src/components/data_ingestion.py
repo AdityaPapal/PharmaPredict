@@ -30,7 +30,7 @@ class DataIngestion:
             df.to_csv(self.ingestion_config.row_data_path,index=False,header=True)
 
             logging.info("train test split initiate")
-            train_set,test_set = train_test_split(df,test_size=0.3,random_state = 0)
+            train_set,test_set = train_test_split(df,test_size=0.2,random_state = 28)
             train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
             test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 

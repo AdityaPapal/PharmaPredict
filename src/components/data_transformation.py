@@ -13,6 +13,7 @@ from src.exception.exception import CustomException
 from src.logging.logger import logging
 from src.utils.utils import save_object
 from src.components.data_ingestion import DataIngestion
+from src.components.model_trainer import ModelTraininerConfig,ModelTrainer
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join('artifacts',"preprocessor.pkl")
@@ -35,18 +36,19 @@ class DataTransformation:
             logging.info("Initiate Pipelines")
 
             logging.info("Start numerical pipeline")
-            num_pipline = Pipeline(
-                steps=[
-                    ("scaler",StandardScaler())
-                ]
-            )
+            # num_pipline = Pipeline(
+            #     steps=[
+            #         # ("scaler",StandardScaler())
+            #     ]
+            # )
+            num_pipline = 'passthrough'
             logging.info("Numberical pipeline completed")
 
             logging.info("Start categorical piplines")
             categorical_pipeline = Pipeline(
                 steps=[
                     ('ordinalencoder',OrdinalEncoder(categories=[sex_cate,BP_cate,cholestrol_cate])),
-                    ('scaler',StandardScaler())
+                    # ('scaler',StandardScaler())
                 ]
             )
             logging.info("Complete categorical pipeline")
@@ -118,7 +120,26 @@ class DataTransformation:
             raise CustomException(e,sys)
         
 if __name__=='__main__':
-     obj=DataIngestion()
-     train_data_path,test_data_path=obj.initiate_data_ingestion()
-     data_transformation = DataTransformation()
-     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data_path,test_data_path)        
+    obj=DataIngestion()
+    train_data_path,test_data_path=obj.initiate_data_ingestion()
+    data_transformation = DataTransformation()
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data_path,test_data_path)        
+
+    model_trainer = ModelTrainer()
+    prediction = model_trainer.initiate_model_trainer(train_arr,test_arr)
+    print(prediction)
+    # if prediction == 'DrugX':
+    #     print("DrugX")
+    #     #return 1
+    # elif prediction == 'DrugY':
+    #     print("DrugY")
+    #     #return 2
+    # elif prediction == 'DrugA':
+    #     print("DrugA")
+    #     #return 3
+    # elif prediction == 'DrugB':
+    #     print("DrugB")
+    #     #return 4
+    # else:
+    #     print("DrugC")
+        #return 'DrugC'

@@ -1,13 +1,13 @@
-# **PharmaSense: Enhancing Drug Recommendations with Machine Learning**
+# **PharmaPredict: Machine Learning for Drug Classification**
 
 ## **Project Overview**
-The **PharmaSense** is a machine learning-based web application designed to help healthcare providers make precise drug recommendations based on patient data. By leveraging health metrics like age, blood pressure, and cholesterol, this system classifies patients into drug categories, improving prescription accuracy and reducing adverse effects.
+The **PharmaPredict** is a machine learning-based web application designed to help healthcare providers make precise drug Classification based on patient data. By leveraging health metrics like age, blood pressure, and cholesterol, this system classifies patients into drug categories, improving prescription accuracy and reducing adverse effects.
 
 ---
 
 ## **Features**
 - **Patient Data Input**: Form to enter relevant health metrics (age, sex, blood pressure, cholesterol levels, etc.)
-- **Drug Recommendation**: Suggests appropriate drugs based on patient data.
+- **Drug Classification**: Suggests appropriate drugs based on patient data.
 - **Model Evaluation**: Shows accuracy, confusion matrix, and other performance metrics.
 - **User-Friendly Interface**: Simple and intuitive web interface.
 
@@ -25,13 +25,13 @@ The **PharmaSense** is a machine learning-based web application designed to help
 2. **Data Preprocessing**: Data cleaning, normalization, and encoding.
 3. **Model Training**: Use supervised learning models like Decision Trees, Random Forest, and Support Vector Machines (SVM).
 4. **Model Evaluation**: Metrics such as accuracy, precision, recall, and F1-score are used to evaluate performance.
-5. **Drug Recommendation**: Based on the model's prediction, a suitable drug is recommended.
+5. **Drug Classification**: Based on the model's prediction, a suitable drug is recommended.
 
 ---
 
 ## **Technologies Used**
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Flask (Python)
+- **Backend**: Flask (Python),MlOP'S
 - **Machine Learning**: Scikit-learn
 - **Database**: SQLite (or any other database of your choice)
 - **Visualization**: Matplotlib, Seaborn for plotting evaluation metrics

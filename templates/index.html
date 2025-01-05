@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="../static/images/logoo.png" alt="logo" class="logo">
+        </div>
+        <ul class="navbar-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">How It Works</a></li> 
+            <li><a href="#features">Features</a></li>
+            <li><a href="{{ url_for('predict_data') }}">Predict</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+        </ul>
+    </nav>
+
+    <header class="header" id="home">
+        <div class="text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary-main">Predict the Right Drug for You</span> 
+                <span class="heading-primary-sub">Smart Recommendations for Medications</span>
+            </h1>
+            <a href="#work" class="btn btn-white">TRY NOW!</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-how-it-works" id="work">
+            <h2 class="heading-secondary">How It Works</h2>
+            <div class="how-it-works-steps">
+                <div class="step">
+                    <img src="../static/images/web-user.png" alt="User Input" class="step-icon">
+                    <h3 class="step-title">Step 1</h3>
+                    <p class="step-description">Start by entering your specific health parameters and requirements in the user-friendly form. This information is crucial for tailoring the drug recommendations to your needs.</p>
+                </div>
+                <div class="step">
+                    <img src="../static/images/analyzing.png" alt="Analyzing Data" class="step-icon">
+                    <h3 class="step-title">Step 2</h3>
+                    <p class="step-description">Once your input is submitted, our advanced algorithm kicks into action. It analyzes various factors, including your input parameters and existing medical data, to determine the best medication options for you.</p>
+                </div>
+                <div class="step">
+                    <img src="../static/images/recommendation.png" alt="Drug Recommendations" class="step-icon">
+                    <h3 class="step-title">Step 3</h3>
+                    <p class="step-description">After the analysis, you will receive personalized drug recommendations. Each suggestion comes with a detailed explanation, helping you understand why it's the optimal choice for your condition.</p>
+                </div>
+            </div>
+            <a href="{{ url_for('predict_data') }}" class="btn">Predict</a>
+        </section>
+
+        <div class="section-key-features" id="features">
+            <h2>Why Rely on Us?</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <div class="feature-circle">
+                        <img src="../static/images/ui.png" alt="User-friendly Interface" class="feature-icon">
+                    </div>
+                    <h3 class="feature-title">User-friendly Interface</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-circle">
+                        <img src="../static/images/accuracy.png" alt="Accurate Recommendations" class="feature-icon">
+                    </div>
+                    <h3 class="feature-title">Accurate Recommendations</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-circle">
+                        <img src="../static/images/fast.png" alt="Fast Analysis" class="feature-icon">
+                    </div>
+                    <h3 class="feature-title">Fast & Efficient Analysis</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-circle">
+                        <img src="../static/images/personalized.png" alt="Personalized Experience" class="feature-icon">
+                    </div>
+                    <h3 class="feature-title">Personalized Experience</h3>
+                </div>
+                <div class="feature">
+                    <div class="feature-circle">
+                        <img src="../static/images/report.png" alt="Summarized Report" class="feature-icon">
+                    </div>
+                    <h3 class="feature-title">Summarized Report</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-container" id="faqs">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What specific details about my health should I provide to receive accurate drug recommendations?</span>
+                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Please provide details like your age, sex, blood pressure, cholesterol level, sodium to potassium ratio, and any current medications you are taking to receive accurate drug recommendations.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can you explain the accuracy of the drug recommendations provided by this service and the factors that influence it?</span>
+                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
+                </div>
+                <div class="faq-answer">
+                    <p>he drug recommendations are based on machine learning algorithms that analyze historical data and clinical studies, providing a high level of accuracy. However, individual responses may vary, and it is advisable to consult a healthcare professional before making any changes to your medication.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I use this service for any medical condition, including chronic illnesses, rare diseases, and specific health concerns that may require specialized treatment or management?</span>
+                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, this service is designed to assist users with a wide range of common medical conditions.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How quickly will I receive my recommendations after submitting the necessary information, and what factors might affect the turnaround time for personalized responses tailored to my specific health needs?</span>
+                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Once you provide the necessary information, you will receive your drug recommendations within a few seconds. Our system processes the data quickly to ensure you have timely information for your health needs</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are the recommendations personalized?</span>
+                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, the recommendations are tailored to your individual health metrics and medical history, ensuring they are relevant to your specific situation.</p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </main>
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.parentElement.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+    
+    
+</body>
+</html>

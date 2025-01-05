@@ -21,6 +21,15 @@ def save_object(file_path,obj):
     except Exception as e:
         raise CustomException(e,sys)
 
+def load_model(file_path):
+    try:
+        with open(file_path,'rb') as file_obj:
+            return dill.load(file_obj)
+        
+    except Exception as e:
+        logging.info("Exception occurs in load model function in utils")
+        raise CustomException(e,sys)
+
 def evaluate_model(x_train,y_train,x_test,y_test,models):
     try:
         report = {}
@@ -42,3 +51,6 @@ def evaluate_model(x_train,y_train,x_test,y_test,models):
     except Exception as e:
         logging.info("Exception occurs in evaluate model function in utils")
         raise CustomException(e,sys)
+    
+
+

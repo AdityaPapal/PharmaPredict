@@ -7,13 +7,15 @@ import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OrdinalEncoder, StandardScaler,OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
 
+from src.components.data_ingestion import DataIngestion
+from src.components.model_trainer import ModelTrainer, ModelTraininerConfig
 from src.exception.exception import CustomException
 from src.logging.logger import logging
 from src.utils.utils import save_object
-from src.components.data_ingestion import DataIngestion
-from src.components.model_trainer import ModelTraininerConfig,ModelTrainer
+
+
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join('artifacts',"preprocessor.pkl")

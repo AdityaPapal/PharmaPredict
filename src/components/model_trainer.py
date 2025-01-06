@@ -1,31 +1,26 @@
 import os
 import sys
 from dataclasses import dataclass
-import pandas as pd
-import numpy as np
-from src.exception.exception import CustomException
-from src.logging.logger import logging
-from src.utils.utils import save_object
-from src.utils.utils import evaluate_model
 
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
+import numpy as np
+import pandas as pd
+from sklearn import metrics
+from sklearn.ensemble import (AdaBoostClassifier, BaggingClassifier,
+                              ExtraTreesClassifier, GradientBoostingClassifier,
+                              RandomForestClassifier, StackingClassifier,
+                              VotingClassifier)
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (accuracy_score, confusion_matrix, f1_score,
+                             precision_score, recall_score)
+from sklearn.naive_bayes import CategoricalNB, GaussianNB, MultinomialNB
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.pipeline import make_pipeline
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.pipeline import make_pipeline
-from sklearn.ensemble import (RandomForestClassifier,
-                              AdaBoostClassifier,
-                              BaggingClassifier,
-                              ExtraTreesClassifier,
-                              GradientBoostingClassifier,
-                              StackingClassifier,
-                              VotingClassifier)
 
-from sklearn.naive_bayes import CategoricalNB,GaussianNB, MultinomialNB
-
-from sklearn import metrics
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from src.exception.exception import CustomException
+from src.logging.logger import logging
+from src.utils.utils import evaluate_model, save_object
 
 
 @dataclass
@@ -46,21 +41,21 @@ class ModelTrainer:
                 test_array[:,-1]
             )
 
-            support_vector = SVC(kernel='linear', max_iter=251)
+            support_vector = SVC(kernel='linear', max_iter=251,class_weight='balanced')
             Kneighbars = KNeighborsClassifier(n_neighbors=20)
             NBclassifier1 = CategoricalNB()
             NBclassifier2 = GaussianNB()
-            decision_tree = DecisionTreeClassifier(max_leaf_nodes=20)
-            logistic = LogisticRegression(solver = 'liblinear', penalty = 'l1',max_iter=5000)
-            random_forest = RandomForestClassifier(max_leaf_nodes=30) 
-            ada_boost = AdaBoostClassifier(n_estimators = 20, )
+            decision_tree = DecisionTreeClassifier(max_leaf_nodes=20,class_weight='balanced')
+            logistic = LogisticRegression(solver = 'liblinear', penalty = 'l1',max_iter=5000,class_weight='balanced')
+            random_forest = RandomForestClassifier(max_leaf_nodes=30,class_weight='balanced') 
+            ada_boost = AdaBoostClassifier(n_estimators = 20)
             bagging = BaggingClassifier(estimator = DecisionTreeClassifier(),n_estimators = 20,max_samples = 0.8,oob_score = True)
             Gradient_boost = GradientBoostingClassifier(n_estimators = 20)
             
             base_learner = [
-                ('support_vector', SVC(kernel='linear', max_iter=251,probability=True)),  # Enable probability for SVC
-                ('logistic', LogisticRegression(solver = 'liblinear', penalty = 'l1',max_iter=5000)),
-                ('random_forest', RandomForestClassifier(max_leaf_nodes=30)),
+                ('support_vector', SVC(kernel='linear', max_iter=251,probability=True,class_weight='balanced')),  # Enable probability for SVC
+                ('logistic', LogisticRegression(solver = 'liblinear', penalty = 'l1',class_weight='balanced',max_iter=5000)),
+                ('random_forest', RandomForestClassifier(max_leaf_nodes=30,class_weight='balanced')),
                 ('Kneighbars',KNeighborsClassifier(n_neighbors=20))   
             ]
             stacking = StackingClassifier(estimators=base_learner, final_estimator=DecisionTreeClassifier(max_leaf_nodes=20))

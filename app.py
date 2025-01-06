@@ -38,15 +38,15 @@ def predict_data():
                 result = "DrugX"
             elif pred == ['drugY']:
                 result = "DrugY"
-            elif pred == ['drugA']:
+            if pred == ['drugA']:
                 result = "DrugA"
             elif pred == ['drugB']:
                 result = "DrugB"
             elif pred == ['drugC']:
                 result = "DrugC"
-            # else:
+           # else:
             #     # Handle unexpected prediction values
-            #     result = pred
+                # result = pred
             
             return render_template("result.html", drug=result)
         

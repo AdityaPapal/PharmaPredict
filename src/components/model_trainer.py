@@ -21,7 +21,10 @@ from sklearn.tree import DecisionTreeClassifier
 from src.exception.exception import CustomException
 from src.logging.logger import logging
 from src.utils.utils import evaluate_model, save_object
-
+from sklearn.preprocessing import StandardScaler
+from sklearn.datasets import make_classification
+from collections import Counter
+from imblearn.over_sampling import SMOTE
 
 @dataclass
 class ModelTraininerConfig:
@@ -40,6 +43,14 @@ class ModelTrainer:
                 test_array[:,:-1],
                 test_array[:,-1]
             )
+            smote = SMOTE(random_state=42)
+            x_train, y_train = smote.fit_resample(x_train, y_train)
+            sc= StandardScaler()
+
+            x_train = sc.fit_transform(x_train)
+            x_test = sc.transform(x_test)
+
+            logging.info(f"Class Distribution After Balancing: {Counter(y_train)}")
 
             support_vector = SVC(kernel='linear', max_iter=251,class_weight='balanced')
             Kneighbars = KNeighborsClassifier(n_neighbors=20)
@@ -49,17 +60,20 @@ class ModelTrainer:
             logistic = LogisticRegression(solver = 'liblinear', penalty = 'l1',max_iter=5000,class_weight='balanced')
             random_forest = RandomForestClassifier(max_leaf_nodes=30,class_weight='balanced') 
             ada_boost = AdaBoostClassifier(n_estimators = 20)
-            bagging = BaggingClassifier(estimator = DecisionTreeClassifier(),n_estimators = 20,max_samples = 0.8,oob_score = True)
             Gradient_boost = GradientBoostingClassifier(n_estimators = 20)
-            
             base_learner = [
                 ('support_vector', SVC(kernel='linear', max_iter=251,probability=True,class_weight='balanced')),  # Enable probability for SVC
                 ('logistic', LogisticRegression(solver = 'liblinear', penalty = 'l1',class_weight='balanced',max_iter=5000)),
                 ('random_forest', RandomForestClassifier(max_leaf_nodes=30,class_weight='balanced')),
-                ('Kneighbars',KNeighborsClassifier(n_neighbors=20))   
+                ('Kneighbars',KNeighborsClassifier(n_neighbors=20))
             ]
+            bagging = BaggingClassifier(estimator = base_learner,n_estimators = 20,max_samples = 0.8,oob_score = True)
+
             stacking = StackingClassifier(estimators=base_learner, final_estimator=DecisionTreeClassifier(max_leaf_nodes=20))
             
+
+            voting_clf = VotingClassifier(estimators=base_learner, voting='soft')
+            voting_clf.fit(x_train, y_train)
             model = {
                 #'Support Vector Classifier' : support_vector,
                 'K-Neighbors Classifier'  : Kneighbars,
@@ -70,6 +84,7 @@ class ModelTrainer:
                 'Bagging Classifier' : bagging,
                 'Stacking':stacking,
                 'Gradient Boosting Classifier' : Gradient_boost,
+                'Voting Classifier':voting_clf
             }
 
             model_report:dict = evaluate_model(x_train=x_train,y_train=y_train,

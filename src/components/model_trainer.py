@@ -45,10 +45,6 @@ class ModelTrainer:
             )
             smote = SMOTE(random_state=42)
             x_train, y_train = smote.fit_resample(x_train, y_train)
-            sc= StandardScaler()
-
-            x_train = sc.fit_transform(x_train)
-            x_test = sc.transform(x_test)
 
             logging.info(f"Class Distribution After Balancing: {Counter(y_train)}")
 

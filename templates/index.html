@@ -3,152 +3,396 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drug Prediction</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <title>Health Care Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Carousel Item Styles */
+        .carousel-item {
+            position: relative;
+            height: 620px; /* Ensure consistent height */
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image covers the entire area */
+        }
+    .navbar {
+        position: fixed; /* Keeps navbar fixed at the top */
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+        background-color: white; /* Optional: Maintain a background color */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for visual distinction */
+    }
+
+    body {
+        padding-top: 70px; /* Adjust for the height of the fixed navbar */
+    }
+
+        /* Add blue gradient overlay */
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Center the caption in the carousel */
+        .carousel-caption {
+            position: absolute;
+            top: 60%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center the caption both vertically and horizontally */
+            text-align: center;
+            width: 100%; /* Ensure it spans the full width of the image */
+            z-index: 2; /* Ensure it's above the gradient */
+
+        }
+
+
+       
+        /* Apply zoom-in animation to the slogan text */
+        .slogan-text {
+            font-size: 3rem;  /* Adjust the size */
+            animation: zoomInText 1.5s ease-out forwards;  /* Apply the zoom-in effect */
+            color: rgb(255, 255, 255) !important;  /* Force white color for slogan text */
+            font-weight: 300;
+        }
+
+        .slogan-text1 {
+            font-size: 2rem;  /* Adjust the size */
+            animation: zoomInText 1.5s ease-out forwards;  /* Apply the zoom-in effect */
+            color: rgb(255, 255, 255) !important;  /* Force white color for slogan text */
+        }
+        /* Keyframes for the zoom-in effect for the slogan text */
+        @keyframes zoomInText {
+            0% {
+                transform: scale(2);  /* Start large */
+                opacity: 0;  /* Start invisible */
+            }
+            50% {
+                transform: scale(1.3);  /* Zoom in a little */
+                opacity: 1;  /* Make it visible */
+            }
+            100% {
+                transform: scale(1);  /* Final size */
+                opacity: 1;  /* Fully visible */
+            }
+        }
+
+        /* Custom Styles for Carousel Arrows */
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    width: 50px; /* Wider rectangle shape */
+    height: 60px; /* Increase height for a rectangular look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensure it's on top */
+    border-radius: 0; /* Remove circular shape */
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* FAQ Section Styling */
+.faq-section {
+            background: linear-gradient(to bottom, #007bff, #002952); /* Gradient blue background */
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid white; /* White border for rectangle */
+            border-radius: 10px; /* Rounded corners */
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+        }
+
+        .faq-item h5 {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .faq-item p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #002952; /* Dark blue */
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Add custom color class */
+.custom-heading-color {
+    color: #002952;  /* Example color (you can replace with any color you like) */
+    font-weight: 800;
+}
+
+
+
+/* Ensure Bootstrap default icons are visible */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    display: block; /* Show default Bootstrap arrows */
+    width: 30px; 
+    height: 30px;
+    background-size: contain;
+}
+
+    </style>
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <img src="../static/images/logoo.png" alt="logo" class="logo">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-2.5">
+        <a href="index.html" class="navbar-brand p-0">
+            <!-- Logo or Brand Name -->
+            <img src="../static/img/pharmapredict-high-resolution-logo.png" alt="Logo" style="height: 45px;"> <!-- Add your logo here -->
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#guide" class="nav-item nav-link">Guide</a>  
+                <a href="{{ url_for('predict_data') }}" class="nav-item nav-link">Predict</a>                          
+                <a href="#faqs" class="nav-item nav-link">FAQs</a>
+            </div>
         </div>
-        <ul class="navbar-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#work">How It Works</a></li> 
-            <li><a href="#features">Features</a></li>
-            <li><a href="{{ url_for('predict_data') }}">Predict</a></li>
-            <li><a href="#faqs">FAQs</a></li>
-        </ul>
     </nav>
+    <!-- Navbar End -->
 
-    <header class="header" id="home">
-        <div class="text-box">
-            <h1 class="heading-primary">
-                <span class="heading-primary-main">Predict the Right Drug for You</span> 
-                <span class="heading-primary-sub">Smart Recommendations for Medications</span>
-            </h1>
-            <a href="#work" class="btn btn-white">TRY NOW!</a>
+    <!-- Slider Start -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
         </div>
-    </header>
-
-    <main>
-        <section class="section-how-it-works" id="work">
-            <h2 class="heading-secondary">How It Works</h2>
-            <div class="how-it-works-steps">
-                <div class="step">
-                    <img src="../static/images/web-user.png" alt="User Input" class="step-icon">
-                    <h3 class="step-title">Step 1</h3>
-                    <p class="step-description">Start by entering your specific health parameters and requirements in the user-friendly form. This information is crucial for tailoring the drug recommendations to your needs.</p>
-                </div>
-                <div class="step">
-                    <img src="../static/images/analyzing.png" alt="Analyzing Data" class="step-icon">
-                    <h3 class="step-title">Step 2</h3>
-                    <p class="step-description">Once your input is submitted, our advanced algorithm kicks into action. It analyzes various factors, including your input parameters and existing medical data, to determine the best medication options for you.</p>
-                </div>
-                <div class="step">
-                    <img src="../static/images/recommendation.png" alt="Drug Recommendations" class="step-icon">
-                    <h3 class="step-title">Step 3</h3>
-                    <p class="step-description">After the analysis, you will receive personalized drug recommendations. Each suggestion comes with a detailed explanation, helping you understand why it's the optimal choice for your condition.</p>
-                </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../static/img/dna1.jpg" class="d-block w-100" alt="Slide 1">
             </div>
-            <a href="{{ url_for('predict_data') }}" class="btn">Predict</a>
-        </section>
-
-        <div class="section-key-features" id="features">
-            <h2>Why Rely on Us?</h2>
-            <div class="features-container">
-                <div class="feature">
-                    <div class="feature-circle">
-                        <img src="../static/images/ui.png" alt="User-friendly Interface" class="feature-icon">
-                    </div>
-                    <h3 class="feature-title">User-friendly Interface</h3>
-                </div>
-                <div class="feature">
-                    <div class="feature-circle">
-                        <img src="../static/images/accuracy.png" alt="Accurate Recommendations" class="feature-icon">
-                    </div>
-                    <h3 class="feature-title">Accurate Recommendations</h3>
-                </div>
-                <div class="feature">
-                    <div class="feature-circle">
-                        <img src="../static/images/fast.png" alt="Fast Analysis" class="feature-icon">
-                    </div>
-                    <h3 class="feature-title">Fast & Efficient Analysis</h3>
-                </div>
-                <div class="feature">
-                    <div class="feature-circle">
-                        <img src="../static/images/personalized.png" alt="Personalized Experience" class="feature-icon">
-                    </div>
-                    <h3 class="feature-title">Personalized Experience</h3>
-                </div>
-                <div class="feature">
-                    <div class="feature-circle">
-                        <img src="../static/images/report.png" alt="Summarized Report" class="feature-icon">
-                    </div>
-                    <h3 class="feature-title">Summarized Report</h3>
-                </div>
+            <div class="carousel-item">
+                <img src="../static/img/images.jpg" class="d-block w-100" alt="Slide 2">
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Static Slogan and Buttons -->
+    <div class="carousel-caption d-none d-md-block">
+        <h5 class="slogan-text">PHARMAPREDICT </h5>
+        <p class="slogan-text1">ML-driven drug recommendations because your health deserves accuracy</p>
+        <div class="btn-container">
+            <a href="#guide" class="btn btn-primary text-white py-2 px-4 me-2">Learn more</a>
+            <a href="{{ url_for('predict_data') }}" id="ourServicesBtn" class="btn btn-outline-light py-2 px-4">Try Now</a>
+        </div>
+    </div>
+    <!-- Slider End -->
 
-        <div class="faq-container" id="faqs">
-            <h1>Frequently Asked Questions</h1>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What specific details about my health should I provide to receive accurate drug recommendations?</span>
-                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Please provide details like your age, sex, blood pressure, cholesterol level, sodium to potassium ratio, and any current medications you are taking to receive accurate drug recommendations.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Can you explain the accuracy of the drug recommendations provided by this service and the factors that influence it?</span>
-                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
-                </div>
-                <div class="faq-answer">
-                    <p>he drug recommendations are based on machine learning algorithms that analyze historical data and clinical studies, providing a high level of accuracy. However, individual responses may vary, and it is advisable to consult a healthcare professional before making any changes to your medication.
-                    </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Can I use this service for any medical condition, including chronic illnesses, rare diseases, and specific health concerns that may require specialized treatment or management?</span>
-                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, this service is designed to assist users with a wide range of common medical conditions.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How quickly will I receive my recommendations after submitting the necessary information, and what factors might affect the turnaround time for personalized responses tailored to my specific health needs?</span>
-                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Once you provide the necessary information, you will receive your drug recommendations within a few seconds. Our system processes the data quickly to ensure you have timely information for your health needs</p>
-                </div>
-            </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Are the recommendations personalized?</span>
-                    <span class="arrow" onclick="toggleAnswer(this)">&#x25BC;</span>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- About Start -->
+     <div id="about" class="about" style="margin-top: 70px;">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title mb-4">
+                        <h5 class="position-relative d-inline-block text-primary text-uppercase " >About Us</h5>
+                        <h1 class="display-5 mb-0">Welcome to our ML-Based Medicine Recommendation Platform</h1>
+                    </div>
+                    <h4 class="text-body fst-italic mb-4">We use ML to suggest the best medicine based on symptoms and health data</h4>
+                    <p class="mb-4">Our ML-powered platform helps individuals make informed health decisions by recommending personalized medicine based on symptoms, medical history, and health data analysis.</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.3s">
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>ML-Powered</h5>
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Accurate Predictions</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.6s">
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Data-Driven</h5>
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Personalized Medicine</h5>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('predict_data') }}" class="btn btn-primary py-3 px-5 mt-4 wow zoomIn" data-wow-delay="0.6s">Try Now !</a>
                 </div>
-                <div class="faq-answer">
-                    <p>Yes, the recommendations are tailored to your individual health metrics and medical history, ensuring they are relevant to your specific situation.</p>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="../static/img/darkbg.jpg" style="object-fit: cover;">
+                    </div>
                 </div>
             </div>
         </div>
-        
-        
-    </main>
-    <script>
-        function toggleAnswer(element) {
-            const answer = element.parentElement.nextElementSibling;
-            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+    </div>
+</div>
+    <!-- About End -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div id="guide" class="#guide">
+<div class="container-fluid py-5">
+    <div class="container" >
+        <div class="row g-5">
+            <!-- Step 1: Display Health Information -->
+            <div class="section-title text-center mb-5">
+                <h2 class="display-5" style="color: #002952; font-weight: bold;">Your Step-by-Step Guide to Personalized Medicine</h2>
+
+                <p class="lead " style="font-weight: 500;color: #1f2669;">Follow these simple steps to receive the best medication recommendations based on your health data.</p>
+            </div>
+            <div class="col-md-4 wow slideInUp" data-wow-delay="0.1s">
+                <div class="card how-it-works-card shadow-lg" >
+                    <div class="card-body text-center" >
+                        <div class="step-icon mb-4">
+                            <i class="fas fa-info-circle fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title text-primary">Step 1: Health Information</h5>
+                        <p class="card-text">Provide the following health parameters for accurate medication recommendations:</p>
+                        <ul class="list-unstyled">
+                            <li><strong>Age</strong></li>
+                            <li><strong>Sex</strong></li>
+                            <li><strong>Blood Pressure</strong></li>
+                            <li><strong>Cholesterol</strong></li>
+                            <li><strong>Other Conditions</strong></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Analyze -->
+            <div class="col-md-4 wow slideInUp" data-wow-delay="0.3s">
+                <div class="card how-it-works-card">
+                    <div class="card-body text-center">
+                        <div class="step-icon mb-4">
+                            <i class="fas fa-cogs fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title text-primary">Step 2: ML-Based Analysis</h5>
+                        <p class="card-text">The <strong>Machine learning model</strong> for drug recommendation uses patient health data, such as age, sex, blood pressure, and cholesterol, to predict the most suitable medication. The model is trained on historical data, with the goal of recommending a specific drug or dosage. After training, it makes personalized predictions for new patients, ensuring the best medication based on their health metrics. The model is fine-tuned for better accuracy and medical relevance.                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Output -->
+            <div class="col-md-4 wow slideInUp" data-wow-delay="0.6s">
+                <div class="card how-it-works-card">
+                    <div class="card-body text-center">
+                        <div class="step-icon mb-4">
+                            <i class="fas fa-pills fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title text-primary">Step 3: Receive Your Drug Recommendations</h5>
+                        <p class="card-text">Based on the analysis, you will receive drug recommendations such as:</p>
+                        <ul class="list-unstyled">
+                            <li><strong>Drug A: Aspirin </strong></li>
+                            <li><strong>Drug B: Benzodiazepine </strong></li>
+                            <li><strong>Drug C: Ciprofloxacin </strong></li>
+                            <li><strong>Drug X: Xanax (Alprazolam) </strong></li>
+                            <li><strong>Drug Y: Yohimbine </strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    
+    
+      
+ <!-- FAQ Section -->
+ <section id="faqs" class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="faq-item">
+                    <h5>What is this platform about?</h5>
+                    <p>Our platform leverages machine learning to provide personalized medicine recommendations based on your health data and symptoms.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>How does the prediction process work?</h5>
+                    <p>You provide health information like age, blood pressure, and cholesterol levels. Our ML model analyzes the data and suggests the best medicine.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="faq-item">
+                    <h5>Can I trust the accuracy of the recommendations?</h5>
+                    <p>Yes, our system uses advanced machine learning trained on medical data, but we always recommend consulting a healthcare professional.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Can I consult with a doctor?</h5>
+                    <p>Yes, we recommend consulting with a healthcare provider alongside using our platform for better health decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <p>&copy; 2025 PharmaPredict: Machine Learning for Drug Classsification & Recommendation. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
     
     
 </body>

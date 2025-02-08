@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benzodiazepine Information</title>
+    <style>
+        /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Body Styling */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, #1b21ca, #000358);
+        font-family: Arial, sans-serif;
+        position: relative;
+    }
+    
+    /* Left Gradient Rectangle */
+    .left-gradient-rectangle {
+        width: 35%;
+        height: 82vh; /* Matches the height of the outer-container */
+        background: linear-gradient(to right, #dbd6f7, #69a3ff);
+        border-radius: 20px 0 0 20px;
+        position: absolute;
+        left: 5%;
+        top: 10%; /* Vertically centered */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start; /* Align the content at the top */
+        gap: 20px;
+    }
+    
+    .left-gradient-rectangle ul {
+        list-style: none; /* Removes default bullets */
+        padding: 0;
+    }
+    
+    .left-gradient-rectangle ul li {
+        position: relative;
+        padding-left: 30px; /* Space for icon */
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    .left-gradient-rectangle ul li::before {
+        content: "⚡"; /* Unicode Lightning Bolt */
+        font-size: 1.3rem;
+        color: #ffcc00; /* Gold lightning bolt */
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        top: 2px;
+    }
+    .side-effects ul {
+        list-style: none; /* Removes default bullets */
+        padding: 0;
+    }
+    
+    .side-effects ul li {
+        position: relative;
+        padding-left: 30px; /* Space for icon */
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    
+    
+    .side-effects p strong {
+        color: #d80000; /* Red for severe effects */
+        font-weight: bold;
+    }
+    
+    .left-gradient-rectangle .drug-details {
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .left-gradient-rectangle h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .left-gradient-rectangle ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+    
+    /* Outer Container (Main Content Section) */
+    .outer-container {
+        width: 70%;
+        height: 88vh;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-left: 20%;
+    }
+    
+    /* Large Horizontal Rectangle (Heading Section) */
+    .large-horizontal {
+        width: 65%;
+        height: 15%;
+        background: linear-gradient(to right, #69a3ff, #dbd6f7);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    
+    .large-horizontal h1 {
+        font-size: 1.5rem;
+        color: #000000;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        margin-left: 6%;
+    }
+    .left-gradient-rectangle ul {
+        list-style: none; /* Removes default black bullets */
+        margin-left: 0; /* Aligns list properly */
+    }
+    
+    
+    /* Right Content Area (Precautions and Side Effects) */
+    /* Right Content Area (Precautions and Side Effects) */
+    .side-rectangle {
+        width: 30%; /* Adjust the width as needed */
+        height: 100%; /* Match the height of the .outer-container */
+        background: linear-gradient(to right, #dbd6f7, #69a3ff);
+        border-radius: 0 20px 20px 0;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: absolute; /* Position it inside the .outer-container */
+        top: 0; /* Align it to the top of .outer-container */
+        right: 0; /* Align it to the right of .outer-container */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    
+    .side-rectangle section {
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .side-rectangle h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .side-rectangle ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        line-height: 1.5;
+    }
+    
+    /* Main Content Styling */
+    /* Main Content Styling (Reduced Size) */
+    .main-content {
+        padding: 15px;
+        max-width: 60%; /* Reduced width */
+        margin: 0 auto;
+        font-size: 0.9rem; /* Slightly smaller font */
+        line-height: 1.5; /* Reduced line spacing */
+        color: #333;
+        margin-left: 20px;
+    }
+    
+    /* Section Headings */
+    .main-content h2 {
+        color: #007bff;
+        margin-bottom: 8px;
+        font-size: 1.2rem; /* Smaller heading size */
+    }
+    
+    /* Table Styling */
+    table {
+        width: 110%;
+        border-collapse: collapse;
+        margin-top: 8px;
+       
+    }
+    
+    th, td {
+        border: 1px solid #dee2e6;
+        padding: 6px; /* Reduced padding */
+        text-align: center;
+        font-size: 0.85rem; /* Smaller table text */
+    }
+    
+    th {
+        background: linear-gradient(to right, #69a3ff, #4c8bf5);
+        color: white;
+        font-size: 0.9rem; /* Smaller table heading */
+    }
+    
+    /* FAQ Section Styling */
+    details {
+        margin-bottom: 8px; /* Reduced spacing */
+        padding: 8px;
+        border-radius: 8px; /* Smaller rounded corners */
+        background: #f1f4f8;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+    
+    details:hover {
+        background: #e2e6ea;
+    }
+    
+    summary {
+        font-weight: bold;
+        font-size: 0.9rem; /* Smaller FAQ text */
+    }
+    
+    /* Fun Fact Styling */
+    .main-content p {
+        margin-bottom: 8px; /* Less spacing between paragraphs */
+        font-size: 0.9rem; /* Smaller paragraph text */
+    }
+    
+    
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+        .left-gradient-rectangle {
+            width: 40%; /* Increase width slightly */
+            left: 3%;
+        }
+    
+        .side-rectangle {
+            width: 35%; /* Increase side rectangle width */
+        }
+    
+        .main-content {
+            max-width: 55%;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .left-gradient-rectangle {
+            width: 45%;
+            left: 2%;
+        }
+    
+        .outer-container {
+            width: 90%;
+            margin-left: 10%;
+        }
+    
+        .large-horizontal {
+            width: 75%;
+        }
+    
+        .side-rectangle {
+            width: 40%;
+            padding: 15px;
+        }
+    
+        .main-content {
+            max-width: 50%;
+            font-size: 0.85rem;
+        }
+    
+        th, td {
+            font-size: 0.8rem;
+            padding: 5px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        /* Stack elements vertically */
+        body {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            padding: 20px;
+        }
+    
+        .outer-container {
+            width: 95%;
+            height: auto;
+            margin-left: 0;
+            flex-direction: column;
+        }
+    
+        .left-gradient-rectangle {
+            width: 90%;
+            position: static;
+            border-radius: 20px;
+            height: auto;
+            text-align: center;
+        }
+    
+        .large-horizontal {
+            width: 90%;
+            margin-left: 0;
+            text-align: center;
+        }
+    
+        .side-rectangle {
+            width: 90%;
+            position: static;
+            border-radius: 20px;
+            height: auto;
+            text-align: center;
+        }
+    
+        .main-content {
+            max-width: 90%;
+            font-size: 0.9rem;
+        }
+    
+        table {
+            width: 100%;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .large-horizontal h1 {
+            font-size: 1.3rem;
+        }
+    
+        .left-gradient-rectangle, .side-rectangle {
+            width: 100%;
+            padding: 10px;
+        }
+    
+        .main-content h2 {
+            font-size: 1.1rem;
+        }
+    
+        table {
+            font-size: 0.75rem;
+        }
+    
+        th, td {
+            padding: 4px;
+        }
+    }
+        </style>
+</head>
+<body>
+    <div class="left-gradient-rectangle">
+        <section class="drug-details">
+            <h2>Drug Details</h2><br>
+            <p><strong>Generic Name:</strong> Benzodiazepine</p><br>
+            <p><strong>Category:</strong> Sedative, Anxiolytic</p><br>
+            <p><strong>Drug Class:</strong> Central Nervous System <br> Depressant</p><br>
+            <h3>Why Benzodiazepine is <br>Suggested:</h3><br>
+            <ul>
+                <li>Used for treating anxiety and<br> panic disorders</li>
+                <li>Helps in insomnia management</li>
+                <li>Effective for seizure control</li>
+                <li>Muscle relaxant for spasms <br>and tension</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="outer-container">
+        <div class="large-horizontal">
+            <h1 class="drug-name">🌙 Benzodiazepine (Drug B) Relax & unwind</h1>
+        </div>
+
+        <div class="main-content">
+            <h2>📋 Dosage Guidelines</h2>
+            <table>
+                <tr>
+                    <th>Condition</th>
+                    <th>Dosage</th>
+                    <th>Best Time to Take</th>
+                </tr>
+                <tr>
+                    <td><strong>Anxiety</strong></td>
+                    <td>2-6 mg daily in divided doses</td>
+                    <td>Morning & evening</td>
+                </tr>
+                <tr>
+                    <td><strong>Insomnia</strong></td>
+                    <td>5-10 mg before bedtime</td>
+                    <td>30 minutes before sleep</td>
+                </tr>
+                <tr>
+                    <td><strong>Seizures</strong></td>
+                    <td>5-10 mg every 6-12 hours</td>
+                    <td>As prescribed by a doctor</td>
+                </tr>
+            </table>
+
+            <h2>❓ FAQ</h2>
+            <details>
+                <summary><strong>💊 Can I take Benzodiazepines long-term?</strong></summary>
+                <p>Not recommended due to dependence and withdrawal risks.</p>
+            </details>
+            <details>
+                <summary><strong>😴 Can I take it for sleep?</strong></summary>
+                <p>Yes, but only for short-term insomnia treatment.</p>
+            </details>
+
+            <details>
+                <summary><strong>😴 Can I take Benzodiazepines for sleep?</strong></summary>
+                <p>Yes, but only for short-term use under a doctor's supervision. Long-term use can lead to tolerance and dependence.</p>
+            </details>
+            
+            <details>
+                <summary><strong>🚗 Can I drive after taking Benzodiazepines?</strong></summary>
+                <p>No, Benzodiazepines can cause drowsiness, dizziness, and impaired coordination, making driving unsafe.</p>
+            </details>
+            <h2>🧪 A Quick History of Benzodiazepines</h2>
+            <p>Benzodiazepines were discovered in 1955 and became one of the most prescribed medications for anxiety and sleep disorders.</p>
+        </div>
+
+        <div class="side-rectangle">
+            <section class="precautions">
+                <h2>Precautions</h2>
+                <ul>
+                    <li> Avoid if you have a history of substance abuse</li>
+                    <li> May cause drowsiness and dizziness</li>
+                    <li> Not for long-term use due to addiction risks</li>
+                </ul>
+            </section>
+
+            <section class="side-effects">
+                <h2>Side Effects</h2>
+                <ul>
+                    <li>Drowsiness</li>
+                    <li>Memory issues</li>
+                    <li> Slowed reflexes</li>
+                </ul><br>
+                <p><strong>⚠️ Severe side effects:</strong><br> Breathing problems, confusion, or extreme drowsiness.</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -18,7 +18,7 @@ def home():
 @app.route('/predict',methods=['GET','POST'])
 def predict_data():
     if request.method == "GET":
-        return render_template("input_form.html")
+        return render_template("predict.html")
     else:
         try:
             data = CustomData(
@@ -35,20 +35,20 @@ def predict_data():
             result = pred
 
             if pred == ['drugX']:
-                result = "DrugX"
+                return render_template("results/drugX.html" ,drug=result )
             elif pred == ['drugY']:
-                result = "DrugY"
+                return render_template("results/drugY.html", drug=result)
             if pred == ['drugA']:
-                result = "DrugA"
+                return render_template("results/drugA.html", drug=result)
             elif pred == ['drugB']:
-                result = "DrugB"
+                return render_template("results/drugB.html", drug=result)
             elif pred == ['drugC']:
-                result = "DrugC"
+                return render_template("results/drugC.html", drug=result)
            # else:
             #     # Handle unexpected prediction values
                 # result = pred
             
-            return render_template("result.html", drug=result)
+            # return render_template("results/drugA.html")
         
         except Exception as e:
             logging.error(f"Error occurred: {e}")

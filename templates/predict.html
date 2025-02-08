@@ -3,10 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Page</title>
+    <title>Medical Diagnosis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000358;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        body {
+        background: linear-gradient(to right, #1b21ca, #000358);
+        color: rgb(0, 0, 0);
+        font-family: Arial, sans-serif;
+        text-align: left;
+    }
+        .container {
+            background: linear-gradient(to right, #dbd6f7, #69a3ff);
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            justify-content: space-between;
+        }
+        .form-section {
+            width: 95%;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #F57E57;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .gender-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .info-table th, .info-table td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        .info-table th {
+            background: #ffffff;
+            color: rgb(0, 0, 0);
+        }
+
+
+        .card-container {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 15px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card {
+        background: #ffffff;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgb(121, 166, 229);
+    }
+
+    .card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #F57E57;
+    }
+
+    .card p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    
+        
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Service Page</h1>
-    <p>This is a simple test.</p>
+    <div style="width: 60px; height: 60px; margin-top: 17px; border-radius: 50%; background: rgb(121, 166, 229); display: flex; align-items: center; justify-content: center;">
+        <img width="40" height="40" src="https://img.icons8.com/doodle/48/search--v1.png" alt="search--v1">
+    </div><br>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;"><br>
+    
+        <h1 style="color:white; margin-top: -22px ; padding: 15px; border-radius: 10px; text-align: center; font-size: 24px; font-weight: bold;">
+            Know Your Numbers – Get a Tailored Health Report
+        </h1>
+    </div>
+    
+    <div class="container">
+        <div class="form-section">
+            <h2 style="display: flex; align-items: center; justify-content: center; gap: 15px;">Enter Your Details</h2>
+            <form action="/predict" method="post">
+
+            
+                <label><strong>Name:</strong></label>
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                    <input type="text" name="first_name" placeholder="First Name" required 
+                        style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <input type="text" name="last_name" placeholder="Last Name" required 
+                        style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                </div>
+
+                <label for="Age"><strong>Age:</strong></label>
+                <input type="text" id="Age" name="Age" placeholder="Enter Your Age" required>
+
+                <label for="Sex"><strong>Gender:</strong></label>
+                <select id="Sex" name="Sex">
+                    <option value="" selected disabled>Select</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select> 
+
+
+                <label for="BP"><strong>Blood pressure levels:</strong></label>
+                <select id="BP" name="BP" placeholder="Enter BP Level" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="LOW">LOW</option>
+                    <option value="NORMAL">NORMAL</option>
+                    <option value="HIGH">HIGH</option>
+                </select> 
+
+                <label for="Cholesterol"><strong>Cholestrol levels:</strong></label>
+                <select id="Cholesterol" name="Cholesterol"  placeholder="Enter Cholesterol Level" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="NORMAL">NORMAL</option>
+                    <option value="HIGH">HIGH</option>
+                </select>
+
+                <label for="Na_to_K"><strong>Na to Potassium Ratio:</strong></label>
+                <input type="text" id="Na_to_K" name="Na_to_K" placeholder="Enter Na to K Ratio" required>
+
+                <button type="submit">PREDICT</button>
+            </form>
+        </div>
+
+    </form>
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+<div style="width: 64px; height: 64px; background: rgb(121, 166, 229); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+<img width="40" height="40" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-idea-leadership-justicon-flat-justicon.png" alt="Idea Icon"/>
+</div>
+<h1 style=" margin-top: 40px; color: white; padding: 15px; border-radius: 10px; text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px;">
+Unlock Vital Health Insights<br> Know More About Your Key Parameters!
+</h1><div style="width: 64px; height: 64px; background: rgb(121, 166, 229); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+<img width="48" height="48" src="https://img.icons8.com/color/48/sparkling.png" alt="sparkling"/>
+</div>
+</div>
+
+<div class="card-container">
+<div class="card">
+<h3>Age</h3>
+<p>Affects metabolism, immune function, and risk of chronic diseases like diabetes and hypertension.</p>
+</div>
+
+<div class="card">
+<h3>Gender</h3>
+<p>Impacts hormone levels, metabolism, and susceptibility to diseases like osteoporosis and heart disease.</p>
+</div>
+
+<div class="card">
+<h3>Blood Pressure Levels (BP)</h3>
+<p>High BP increases risk of stroke and kidney disease, while low BP can cause dizziness and fainting.</p>
+</div>
+
+<div class="card">
+<h3>Cholesterol Levels</h3>
+<p>High cholesterol leads to artery blockages, increasing heart disease and stroke risk.</p>
+</div>
+
+<div class="card">
+<h3>Na to Potassium Ratio</h3>
+<p>A high ratio is linked to hypertension and cardiovascular disease, affecting heart and kidney health.</p>
+</div>
+</div>
 </body>
 </html>

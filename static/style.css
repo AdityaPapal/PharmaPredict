@@ -1,456 +1,440 @@
+/* Reset margin and padding */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-}
-
-/* Header Section */
-.header {
-    height: 95vh;
-    background-image: 
-        linear-gradient(to left , rgba(188, 187, 187, 0.7), rgb(137, 248, 252)), 
-        url("../static/images/home.jpg");
-    background-size: cover;
-    position: relative; 
-    display: flex; /* Enable flexbox layout */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-}
-
-.text-box {
-    text-align: center; 
-    top: 40%;
-    left: 50%;
-    text-align: center;
-
-}
-
-.logo-box {
-    position: absolute;
-    top: 40px;
-    left: 80px;
-}
-
-.logo {
-    height: 60px;
-    font-weight: 800;
-}
-
-.heading-primary {
-    color: rgb(9, 9, 78);
-    text-transform: uppercase;
-    backface-visibility: hidden;
-}
-
-.heading-primary-main {
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 2px; 
-    animation-name:moveInLeft;
-    animation-duration: 5s;
-    animation-timing-function: ease-out;
-}
-
-.heading-primary-sub {
-    display: block;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 1px; /* Adjusted for better readability */
-}
-
-
-@keyframes moveInLeft {
-    0%{
-        opacity: 0;
-        transform: translate(-100px);
-    }
-
-    80%{
-transform: translate(20px);
-    }
-
-    100%{
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-.btn{
-
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 13px 30px;
-    display: inline-block;
-    border-radius: 90px;
-    box-shadow: 0 5px 5px ;
-
-}
-
-.btn-white{
-    background-color:#ffffff ;
-    color:rgb(9, 9, 78);
-}
-
-
-.section-about{
-    background-color: #ffffff;
-    padding: 30rem 0;;
-}
-
-
-.section-about {
-    background-color: #ffffff;
-    padding: 2rem 0; /* Adjusted from 25rem to 5rem */
-    text-align: center;
-}
-
-
-.heading-secondary {
-    font-size: 25px; /* Size of the About Us title */
-    font-weight: 700; /* Bold font */
-    color: rgb(9, 9, 78); /* Use the same color scheme */
-    margin-bottom: 1.5rem; /* Spacing below the title */
-}
-
-.about-description {
-    font-size: 18px; /* Font size for description */
-    color: #777; /* Description text color */
-    max-width: 600px; /* Limit the width for better readability */
-    margin: 0 auto; /* Center align the description */
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #24BEB9 ;
-    padding: 10px 20px; /* Reduced vertical padding */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navbar a {
-    color: #C1B589 ;
-    text-decoration: none;
-    padding: 8px 12px; /* Adjust this for link padding */
-    line-height: 1.2; /* Adjust line height for links */
-}
-
-.navbar-logo img {
-    height: 60px;
-}
-
-.navbar-links {
-    list-style: none;
-    display: flex; /* This will ensure the items are aligned in a row */
-    gap: 20px; /* Adds space between each navigation link */
-}
-
-.navbar-links li {
-    display: inline-block;
-}
-
-.navbar-links a {
-    text-decoration: none;
-    color: rgb(1, 1, 57);
-    font-weight: 600;
-    padding: 5px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar-links a:hover {
-    background-color: rgb(9, 9, 78);
-    color: white;
-}
-
-.section-how-it-works {
-    background-color: #f7f7f7; /* Light background for contrast */
-    padding: 4rem 2rem; /* Padding for spacing */
-    text-align: center;
-}
-.how-it-works-steps {
-    display: flex; /* Flexbox layout */
-    justify-content: space-around; /* Evenly space items */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.step {
-    background: rgb(137, 248, 252); /* White background for each step */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
-    padding: 2rem; /* Padding inside the step box */
-    margin: 1rem; /* Margin between steps */
-    width: 300px; /* Fixed width for steps */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
-}
-
-.step:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-}
-
-.step-icon {
-    height: 80px; /* Icon size */
-    margin-bottom: 1rem; /* Space below the icon */
-}
-
-.step-title {
-    font-size: 24px; /* Title size */
-    color: rgb(9, 9, 78); /* Title color */
-    margin-bottom: 0.5rem; /* Space below the title */
-}
-
-.step-description {
-    color:rgb(9, 9, 78); /* Description color */
-    font-size: 16px; /* Description size */
-    line-height: 1.5; /* Line height for readability */
-}
-
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif; /* Font family */
-    background-color: #f7f7f7; /* Background color for the entire page */
-    color: #333; /* Default text color */
-    margin: 0; /* Remove default margin */
-}
-
-/* Service Section Styles */
-.section-service {
-    background-color: #fff; /* White background for service section */
-    padding: 4rem 2rem; /* Padding for spacing */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    max-width: 600px; /* Max width for the form */
-    margin: 2rem auto; /* Center the section */
-    text-align: center; /* Center text */
-}
-
-.heading-secondary {
-    font-size: 25px; /* Size for section heading */
-    color: rgb(9, 9, 78); /* Color for section heading */
-    margin-bottom: 1rem; /* Space below the heading */
-}
-
-/* Form Styles */
-.service-form {
-    display: flex; /* Flexbox layout for form elements */
-    flex-direction: column; /* Stack elements vertically */
-}
-
-label {
-    margin: 0.5rem 0; /* Space around labels */
-    font-weight: bold; /* Bold labels */
-}
-
-input, select {
-    padding: 0.8rem; /* Padding for inputs and selects */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 1rem; /* Space below inputs */
-}
-
-.section-how-it-works h2 {
-    font-size: 30px; /* Set title size to 25px */
-    font-weight: 700; /* Bold font */
-    color: rgb(9, 9, 78); /* Use the same color scheme */
-    margin-bottom: 1.5rem; /* Spacing below the title */
-}
-
-
-
-input:focus, select:focus {
-    border-color: rgb(9, 9, 78); /* Change border color on focus */
-    outline: none; /* Remove default outline */
-}
-
-/* Button Styles */
-.btn {
-    background-color: rgb(9, 9, 78); /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners for button */
-    padding: 0.8rem 1.5rem; /* Padding for button */
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s; /* Transition for hover effect */
-}
-
-.btn:hover {
-    background-color: rgb(9, 9, 78);
-    color: white;
-    transform: translateY(-2px); /* Slight lift on hover */
+/* Default styling for Try Now button */
+#ourServicesBtn {
+    background-color: #ff6600; /* Custom orange background */
+    color: white; /* White text */
+    border: 2px solid #ff6600; /* Border matching background */
     transition: all 0.3s ease; /* Smooth transition */
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Hover effect */
+#ourServicesBtn:hover {
+    background-color: white; /* White background on hover */
+    color: #ff6600; /* Orange text on hover */
+    border: 2px solid #ff6600; /* Border remains same */
+    transform: scale(1.05); /* Slight increase in size */
+}
+/* Responsive Navbar */
+@media (max-width: 992px) {
+    .navbar-nav {
+        justify-content: center; /* Center items */
+    }
+    .navbar .navbar-nav .nav-item {
+        padding: 10px 15px; /* Reduce padding */
+    }
+}
+
+/* Make carousel text fit properly */
+@media (max-width: 768px) {
+    .carousel-caption {
+        top: 60%;
+        transform: translate(-50%, -60%);
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Responsive Cards */
+@media (max-width: 768px) {
+    .row.g-5 {
+        flex-direction: column; /* Stack cards */
+        gap: 10px; /* Reduce spacing */
+    }
+    .col-md-4 {
+        max-width: 100%;
+    }
+}
+
+/* Adjust button sizes for smaller screens */
+@media (max-width: 576px) {
+    #ourServicesBtn, #bookAppointmentBtn {
+        width: 100%; /* Full width */
+        font-size: 14px;
+    }
 }
 
 
-/* Results Section Styles */
-.section-results {
-    background-color: #fff; /* White background for results section */
-    padding: 4rem 2rem; /* Padding for spacing */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    max-width: 600px; /* Max width for the results */
-    margin: 2rem auto; /* Center the section */
-    text-align: center; /* Center text */
+
+/* Slogan Text Zoom-In Effect */
+@keyframes zoomInText {
+    0% {
+        transform: scale(2);  /* Start large */
+        opacity: 0;  /* Start invisible */
+    }
+    50% {
+        transform: scale(1.3);  /* Zoom in a little */
+        opacity: 1;  /* Make it visible */
+    }
+    100% {
+        transform: scale(1);  /* Final size */
+        opacity: 1;  /* Fully visible */
+    }
 }
 
-.result {
-    font-size: 20px; /* Font size for results */
-    color: rgb(9, 9, 78); /* Color for results text */
-    margin-top: 1rem; /* Space above results */
+/* Apply zoom-in animation to the slogan text */
+.slogan-text {
+    font-size: 1.5rem;  /* Adjust the size */
+    animation: zoomInText 1.5s ease-out forwards;  /* Apply the zoom-in effect */
+    color: rgb(255, 255, 255) !important;  /* Force black color for slogan text */
 }
 
-.section-key-features {
-    padding: 4rem 2rem; /* Padding for spacing */
-    text-align: center; /* Center the text */
+/* Apply smooth transition for the sliding animation of buttons */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Start from left */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-.section-key-features {
-    padding: 1rem 2rem; /* Padding for spacing */
-    text-align: center; /* Center the text */
-    font-size: 25px; /* Size of the About Us title */
-    font-weight: 700; /* Bold font */
-    color: rgb(0, 0, 0); /* Use the same color scheme */
-    margin-bottom: 1.5rem; /* Spacing below the title */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Start from right */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply sliding animation to the "Book Appointment" button */
+#bookAppointmentBtn {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+/* Apply sliding animation to the "Our Services" button */
+#ourServicesBtn {
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+/* Adjust carousel caption */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    transition: all 0.5s ease; /* Add smooth transition */
+}
+
+/* Add smooth transition to buttons */
+.carousel-caption .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    transition: all 0.5s ease; /* Add smooth transition for buttons */
+}
+
+/* Adjust carousel caption text color to black */
+.carousel-caption h5, .carousel-caption p {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Carousel Button Styling */
+.carousel-caption .btn {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-caption .btn:hover {
+    transform: scale(1.1);  /* Make buttons a little bigger when hovered */
+    background-color: #0056b3; /* Change background color when hovered */
+}
+
+/* Adjust carousel indicators position */
+.carousel-indicators {
+    position: fixed;
+    bottom: 0px;
+    left: 35%;
+    transform: translateX(-50%);
+    z-index: 90;
+    color: #ffffff;
 }
 
 
-.features-container {
-    display: flex; /* Use flexbox layout */
-    justify-content: center; /* Center items */
-    flex-wrap: wrap; /* Allow wrapping */
-    gap:7rem;
+
+
+
+
+
+
+/* Custom Styles for Carousel Arrows */
+.carousel-control-prev, .carousel-control-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+    border-radius: 50%;  /* Round button */
+    color: rgb(0, 0, 0);  /* White arrows */
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;  /* Ensure it's on top */
 }
 
-.feature {
-    display: flex; /* Flex for vertical alignment */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    flex: 0 0 auto; /* Prevent features from shrinking */
-    width: 150px; /* Set a fixed width for each feature to ensure alignment */
+.carousel-control-prev {
+    left: 10px;  /* Position on the left */
+}
+
+.carousel-control-next {
+    right: 10px;  /* Position on the right */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    display: none;  /* Hide the default icons */
+}
+
+
+
+
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Add blue gradient overlay */
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 255, 0.7), rgba(0, 0, 255, 0)); /* Blue gradient */
+    z-index: 1;
+}
+
+/* Full width and tall navbar */
+.navbar {
+    width: 100%;  /* Ensure navbar spans full width */
+    position: fixed;  /* Fix the navbar to the top of the screen */
+    top: 0;  /* Make sure it stays at the top */
+    left: 0;  /* Align to the left edge of the screen */
+    z-index: 1030;  /* Ensure it stays on top of other content */
+    background-color: #0b69ff;  /* Set background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Add shadow for better visibility */
+    font-weight: 900;
     
 }
-
-.feature-circle {
-    width: 170px; /* Width of circle */
-    height: 170px; /* Height of circle */
-    border-radius: 50%; /* Make it circular */
-    background: #97deff ; /* Light grey background */
-    display: flex; /* Flexbox for center alignment */
-    justify-content: center; /* Center icon horizontally */
-    align-items: center; /* Center icon vertically */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    margin-bottom: 1rem; /* Space below the circle */
-}
-
-.feature-icon {
-    width: 60px; /* Width for icons */
-    height: 60px; /* Height for icons */
-}
-
-@media (max-width: 768px) {
-    .how-it-works-steps {
-        flex-direction: column; /* Stack steps vertically on smaller screens */
-        align-items: center; /* Center align items */
-    }
-}
-
-
-.feature-title {
-    font-size: 18px; /* Font size for titles */
-    color: rgb(9, 9, 78); /* Color for titles */
-    margin-right: 30px;
-}
-
-
-.section-how-it-works h2,
-.section-key-features h2 { /* Add your class or id for "Why Rely on Us" */
-    font-size: 35px; /* Set title size to 30px */
-    font-weight: 700; /* Bold font */
-    color: rgb(9, 9, 78); /* Use the same color scheme */
-    margin-bottom: 1.5rem; /* Spacing below the title */
-}
-
-
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif; /* Or any font you prefer */
+    padding-top: 70px; /* Adjust this value to the height of your navbar */
 }
 
-.section-faqs {
+/* Adjust the padding for vertical spacing */
+.navbar .navbar-nav .nav-item {
+    padding-top: 130px;  /* Adjust vertical spacing for navbar items */
+    padding-bottom: 130px;  /* Adjust vertical spacing for navbar items */
+}
+
+/* Align navbar items horizontally */
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end;  /* Align items to the right */
     width: 100%;
-    height: 100vh; /* Full viewport height */
-    background-color: #f8f8f8; /* Light background color */
+    align-items: center;  /* Vertically align items */
+}
+
+
+/*Guide section*/
+/* Card Styling for Each Step */
+.how-it-works-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(44, 2, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Center content */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    height: 100%;
+    text-align: center; /* Center text */
+    background-color: #f0f8ff; /* Light blue color */
+    border: 1px solid #007bff; /* Optional border color */
 }
 
-h2.heading-secondary {
-    color: navy; /* Your preferred heading color */
+/* Hover Animation: Scale Effect */
+.how-it-works-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Increase the shadow for the "lifted" effect */
+}
+
+/* Step Icon Styling */
+.step-icon {
+    color: #007bff;
     margin-bottom: 20px;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* Card Body Styling */
+.card-body {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.faq-container {
-    max-width: 1200px; /* Set your desired max-width */
-    margin: 0 auto;
-    padding: 20px;
+.card-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1b21ca;
+    margin-bottom: 30px;
 }
 
-.faq-item {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    width: 100%; /* Full width */
-    padding: 10px;
+.card-text {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.6;
 }
 
-.faq-question {
+ul {
+    font-size: 14px;
+    color: #333;
+    padding-left: 20px;
+    text-align: left; /* Align list items properly */
+}
+
+/* Responsive layout for each step */
+.row.g-5 {
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.arrow {
-    font-size: 20px; /* Arrow size */
+/* Ensure each card takes equal width */
+.col-md-4 {
+    flex: 1;
+    max-width: 32%; /* Ensures 3 columns on large screens */
 }
 
-.faq-answer {
-    display: none; /* Hide answer by default */
-    padding: 10px 0 0 0;
-    margin-top: 10px; /* Space above the button */
-
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .col-md-4 {
+        max-width: 100%; /* Stacks the cards on mobile */
+    }
 }
 
-/* Assuming the color you want is defined here */
-.faq-heading {
-    font-size: 30px; /* Set title size to 25px */
-    font-weight: 700; /* Bold font */
-    color: rgb(9, 9, 78); /* Use the same color scheme */
-    margin-bottom: 1.5rem; /* Replace this with the actual color used in "Why Rely on Us" */
+/* Remove any default list styling */
+ul.list-unstyled {
+    padding-left: 0;  /* Removes default padding */
+    list-style-type: disc;  /* Ensure bullet points are displayed */
+    text-align: left;  /* Align text to the left */
 }
 
-/* Alternatively, style the h1 directly if not using a class */
-.faq-container h1 {
-    color: rgb(9, 9, 78); /* Use the same color scheme */
+/* Style the list items */
+ul.list-unstyled li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px; /* Optional: Adds space between list items */
+}
+
+
+
+
+/*template drug*/
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #1b21ca, #000358);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    color: #1b21ca;
+}
+
+.back-button {
+    display: inline-block;
+    background: #F57E57;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+a:hover {
+    color: #e67e22;
+}
+
+.sidebar {
+    background-color: #fde3cf;
+}
+
+
+/* Responsive Navbar */
+@media (max-width: 992px) {
+    .navbar-nav {
+        justify-content: center; /* Center items */
+    }
+    .navbar .navbar-nav .nav-item {
+        padding: 10px 15px; /* Reduce padding */
+    }
+}
+
+/* Make carousel text fit properly */
+@media (max-width: 768px) {
+    .carousel-caption {
+        top: 60%;
+        transform: translate(-50%, -60%);
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Responsive Cards */
+@media (max-width: 768px) {
+    .row.g-5 {
+        flex-direction: column; /* Stack cards */
+        gap: 10px; /* Reduce spacing */
+    }
+    .col-md-4 {
+        max-width: 100%;
+    }
+}
+
+/* Adjust button sizes for smaller screens */
+@media (max-width: 576px) {
+    #ourServicesBtn, #bookAppointmentBtn {
+        width: 100%; /* Full width */
+        font-size: 14px;
+    }
 }

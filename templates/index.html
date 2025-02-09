@@ -19,8 +19,10 @@
             object-fit: cover; /* Ensure image covers the entire area */
         }
     .navbar {
+        
         position: fixed; /* Keeps navbar fixed at the top */
         top: 0;
+        height: 60px;
         width: 100%;
         z-index: 1030;
         background-color: white; /* Optional: Maintain a background color */
@@ -181,7 +183,7 @@ html {
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-2.5">
-        <a href="index.html" class="navbar-brand p-0">
+        <a href="http://127.0.0.1:5000/" class="navbar-brand p-0">
             <!-- Logo or Brand Name -->
             <img src="../static/img/pharmapredict-high-resolution-logo.png" alt="Logo" style="height: 45px;"> <!-- Add your logo here -->
 
@@ -193,8 +195,9 @@ html {
             <div class="navbar-nav ms-auto py-0">
                 <a href="#home" class="nav-item nav-link active">Home</a>
                 <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#guide" class="nav-item nav-link">Guide</a>  
-                <a href="{{ url_for('predict_data') }}" class="nav-item nav-link">Predict</a>                          
+                <a href="#guide" class="nav-item nav-link">Guide</a>
+                <a href="https://v0-mld-ashboard-uxlfga.vercel.app/" class="nav-item nav-link">Performance</a>
+                <a href="{{ url_for('predict_data') }}" class="nav-item nav-link">Predict</a>
                 <a href="#faqs" class="nav-item nav-link">FAQs</a>
             </div>
         </div>

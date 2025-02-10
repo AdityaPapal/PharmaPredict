@@ -38,7 +38,7 @@
             width: 100%;
             padding: 8px;
             margin: 10px 0;
-            border: 1px solid #ccc;
+            border: 1px solid #dddbda;
             border-radius: 5px;
         }
         button {
@@ -56,6 +56,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            background: 1px solid #dddbda;
             margin: 10px 0;
         }
         .info-table {
@@ -83,14 +84,15 @@
     }
 
     .card {
-        background: #ffffff;
+        
         color: rgb(0, 0, 0);
         border-radius: 10px;
         padding: 20px;
         width: 200px;
         text-align: center;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        border: 2px solid rgb(121, 166, 229);
+        box-shadow: 2px 4px 8px rgba(255, 254, 254, 0.2);
+        border: 7px solid #B1BAC4;
+        background-color:#F3F4F6;
     }
 
     .card h3 {
@@ -104,6 +106,20 @@
         line-height: 1.4;
     }
 
+    .card:hover {
+        transform: translateY(-5px); /* Slight upward lift */
+        box-shadow: 0 8px 16px rgba(0, 41, 82, 0.3); /* Soft blue shadow */
+    }
+    
+    /* Step Icon Styling */
+    .step-icon i {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Rotate icon on hover */
+    .card:hover .step-icon i {
+        transform: rotate(15deg);
+    }
     
         
     </style>
@@ -128,17 +144,17 @@
                 <label><strong>Name:</strong></label>
                 <div style="display: flex; gap: 10px; justify-content: center;">
                     <input type="text" name="first_name" placeholder="First Name" required 
-                        style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        style="padding: 10px; border-radius: 5px; border: 1px solid #dddbda;">
                     <input type="text" name="last_name" placeholder="Last Name" required 
-                        style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        style="padding: 10px; border-radius: 5px; border: 1px solid #dddbda;">
                 </div>
 
-                <label for="Age"><strong>Age:</strong></label>
-                <input type="text" id="Age" name="Age" placeholder="Enter Your Age" required>
+                <label for="Age" ><strong>Age:</strong></label>
+                <input type="text" style="border: 1px solid #dddbda;" id="Age" name="Age" placeholder="Enter Your Age" required>
 
                 <label for="Sex"><strong>Gender:</strong></label>
-                <select id="Sex" name="Sex">
-                    <option value="" selected disabled>Select</option>
+                <select id="Sex" name="Sex"  style="border: 1px solid #dddbda;">
+                    <option  style="border: 1px solid #dddbda;" value="" selected disabled>Select</option>
                     <option value="M">Male</option>
                     <option value="F">Female</option>
                 </select> 
@@ -160,7 +176,7 @@
                 </select>
 
                 <label for="Na_to_K"><strong>Na to Potassium Ratio:</strong></label>
-                <input type="text" id="Na_to_K" name="Na_to_K" placeholder="Enter Na to K Ratio" required>
+                <input type="text" style="border: 1px solid #dddbda;" id="Na_to_K" name="Na_to_K" placeholder="Enter Na to K Ratio" required>
 
                 <button type="submit">PREDICT</button>
             </form>

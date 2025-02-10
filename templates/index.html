@@ -22,7 +22,7 @@
         
         position: fixed; /* Keeps navbar fixed at the top */
         top: 0;
-        height: 60px;
+        height: 70px;
         width: 100%;
         z-index: 1030;
         background-color: white; /* Optional: Maintain a background color */
@@ -30,7 +30,7 @@
     }
 
     body {
-        padding-top: 70px; /* Adjust for the height of the fixed navbar */
+        padding-top: 50px; /* Adjust for the height of the fixed navbar */
     }
 
         /* Add blue gradient overlay */
@@ -174,6 +174,31 @@ html {
     width: 30px; 
     height: 30px;
     background-size: contain;
+    background-color:#F3F4F6;
+}
+/* From Uiverse.io by SteveBloX */ 
+.how-it-works-card {
+    border: 4px solid #C9D1D9; /* Blue border */
+    border-radius: 15px; /* Rounded corners */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color:#F7F9FD;
+    box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
+}
+
+/* Hover Effect */
+.how-it-works-card:hover {
+    transform: translateY(-5px); /* Slight upward lift */
+    box-shadow: 0 8px 16px rgba(0, 41, 82, 0.3); /* Soft blue shadow */
+}
+
+/* Step Icon Styling */
+.step-icon i {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate icon on hover */
+.how-it-works-card:hover .step-icon i {
+    transform: rotate(15deg);
 }
 
     </style>
@@ -185,7 +210,7 @@ html {
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-2.5">
         <a href="http://127.0.0.1:5000/" class="navbar-brand p-0">
             <!-- Logo or Brand Name -->
-            <img src="../static/img/pharmapredict-high-resolution-logo.png" alt="Logo" style="height: 45px;"> <!-- Add your logo here -->
+            <img src="../static/img/Ml2.png" alt="Logo" style="height: 45px;"> <!-- Add your logo here -->
 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -288,7 +313,7 @@ html {
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <div id="guide" class="#guide">
+<div id="guide" class="#guide">
 <div class="container-fluid py-5">
     <div class="container" >
         <div class="row g-5">
@@ -320,7 +345,7 @@ html {
 
             <!-- Step 2: Analyze -->
             <div class="col-md-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="card how-it-works-card">
+                <div class="card how-it-works-card shadow-lg">
                     <div class="card-body text-center">
                         <div class="step-icon mb-4">
                             <i class="fas fa-cogs fa-3x text-primary"></i>
@@ -332,7 +357,7 @@ html {
 
             <!-- Step 3: Output -->
             <div class="col-md-4 wow slideInUp" data-wow-delay="0.6s">
-                <div class="card how-it-works-card">
+                <div class="card how-it-works-card shadow-lg">
                     <div class="card-body text-center">
                         <div class="step-icon mb-4">
                             <i class="fas fa-pills fa-3x text-primary"></i>
@@ -353,6 +378,7 @@ html {
     </div>
 </div>
 </div>
+
 
     
     

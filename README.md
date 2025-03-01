@@ -13,6 +13,7 @@ The **PharmaPredict** is a machine learning-based web application designed to he
 
 ---
 
+
 ## **Usage**
 1. Enter patient details in the provided form.
 2. Click on the "Recommend Drug" button.

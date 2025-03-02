@@ -15,7 +15,7 @@ jobs:
       run: docker build . --file DockerFile --tag workflow-test:$(date +%s)
   build-and-test:
     runs-on: ubuntu-latest
-
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3

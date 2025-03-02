@@ -2,9 +2,7 @@
 
 ## **Project Overview**
 The **PharmaPredict** is a machine learning-based web application designed to help healthcare providers make precise drug Classification based on patient data. By leveraging health metrics like age, blood pressure, and cholesterol, this system classifies patients into drug categories, improving prescription accuracy and reducing adverse effects.
-
 ---
-
 ## **Features**
 - **Patient Data Input**: Form to enter relevant health metrics (age, sex, blood pressure, cholesterol levels, etc.)
 - **Drug Classification**: Suggests appropriate drugs based on patient data.

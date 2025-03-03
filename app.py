@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np  
 
 
-application = Flask(__name__)
+application = Flask(__name__,template_folder='templates')
 app = application
 
 @app.route('/')

@@ -35,15 +35,15 @@ def predict_data():
             result = pred
 
             if pred == ['drugX']:
-                return render_template("results/drugX.html" ,drug=result )
+                return render_template("drugX.html" ,drug=result )
             elif pred == ['drugY']:
-                return render_template("results/drugY.html", drug=result)
+                return render_template("drugY.html", drug=result)
             if pred == ['drugA']:
-                return render_template("results/drugA.html", drug=result)
+                return render_template("drugA.html", drug=result)
             elif pred == ['drugB']:
-                return render_template("results/drugB.html", drug=result)
+                return render_template("drugB.html", drug=result)
             elif pred == ['drugC']:
-                return render_template("results/drugC.html", drug=result)
+                return render_template("drugC.html", drug=result)
            # else:
             #     # Handle unexpected prediction values
                 # result = pred

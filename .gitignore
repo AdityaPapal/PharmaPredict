@@ -2,5 +2,4 @@ env
 PharmaSense.egg-info
 python==3.8
 logs
-artifacts
 __pycache__

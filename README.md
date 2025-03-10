@@ -30,9 +30,8 @@ The **PharmaPredict** is a machine learning-based web application designed to he
 
 ## **Technologies Used**
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Flask (Python),MlOP'S
-- **Machine Learning**: Scikit-learn
-- **Database**: SQLite (or any other database of your choice)
+- **Backend**: Python, Flask, MLOps
+- **Machine Learning**: Scikit-learn, Pandas, Numpy 
 - **Visualization**: Matplotlib, Seaborn for plotting evaluation metrics
 
 ---
